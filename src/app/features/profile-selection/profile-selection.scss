@@ -35,6 +35,7 @@ header h2 {
   align-items: center;
   cursor: pointer;
   transition: transform 0.2s;
+  user-select: none;
 
   &:hover {
     transform: scale(1.05);
