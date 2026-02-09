@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Theming System */
+:root {
+  /* Dark Mode */
+  --bg-primary: #1a1a1a;      /* Deep Charcoal */
+  --text-primary: #ecf0f1;    /* Soft White */
+  --accent-color: #f39c12;    /* Amber (good contrast on dark) */
+  --btn-bg: #ecf0f1;
+  --btn-text: #2c3e50;
+  --btn-border: #444444;
+
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+[data-theme="light"] {
+  /* Light Mode (Default) */
+  --bg-primary: #f8f5f2;      /* Off-white paper */
+  --text-primary: #2c3e50;    /* Dark Navy */
+  --accent-color: #4ca1af;    /* Teal */
+  --btn-bg: #2c3e50;
+  --btn-text: #ffffff;
+  --btn-border: #e0e0e0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  
+  /* Apply the clean UI font globally */
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased; /* Makes text look sharper on Mac/iOS */
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply the "Display" font to headings */
+h1, h2, h3, h4, h5, h6, .game-title {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em; /* Tighter tracking looks more modern */
+}
+
+/* Optional: Make buttons punchy */
+button {
+  font-family: var(--font-body); /* Keep buttons readable */
+}

@@ -1,0 +1,43 @@
+/* app.scss */
+
+/* Ensure the container fills the screen */
+.shef-app-container {
+  min-height: 100vh;
+  position: relative;
+  /* Background and color are handled by global styles.scss via variables */
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000; /* Stays on top of everything */
+  
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+  
+  /* Flex centering for the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+    border-color: var(--btn-border); /* Uses your global variable */
+  }
+
+  /* Optional: Active state for click feedback */
+  &:active {
+    transform: scale(0.95);
+  }
+}

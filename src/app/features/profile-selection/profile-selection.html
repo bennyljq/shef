@@ -1,0 +1,65 @@
+<div class="selection-container">
+  <button class="nav-back-btn" (click)="goHome()" aria-label="Back to Home">
+    ←
+  </button>
+  
+  <header>
+    <h2>Choose Your Shef</h2>
+  </header>
+  
+  <div class="chef-grid">
+    @for (chef of chefs; track chef.id) {
+      <div class="chef-sprite-container" (click)="openModal(chef)">
+        
+        <div class="sprite-circle" [style.border-color]="chef.color">
+          <img 
+          [src]="chef.imageUrl" 
+          [alt]="chef.name" 
+          class="chef-img"
+          (error)="chef.imageUrl = ''" 
+          />
+          
+          @if (!chef.imageUrl) {
+            <span class="initials" [style.background-color]="chef.color">{{ chef.initials }}</span>
+          }
+        </div>
+        
+        <span class="chef-name">{{ chef.name }}</span>
+        <span class="chef-role">{{ chef.archetype }}</span>
+      </div>
+    }
+  </div>
+  
+  @if (selectedChef(); as chef) {
+    <div class="modal-backdrop" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        
+        <div class="modal-header">
+          <img [src]="chef.imageUrl" class="header-bg-img">
+          <div class="header-overlay" [style.background]="chef.color"></div>
+          
+          <button class="close-btn" (click)="closeModal()">×</button>
+          
+          <div class="modal-avatar">
+            <img [src]="chef.imageUrl" [alt]="chef.name">
+          </div>
+        </div>
+        
+        <div class="modal-body">
+          <h3>{{ chef.name }}</h3>
+          <span class="badge">{{ chef.archetype }}</span>
+          
+          <ul class="description-list">
+            @for (point of chef.description; track $index) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+        
+        <div class="modal-footer">
+          <button class="btn-select" (click)="confirmSelection()">Select Shef</button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

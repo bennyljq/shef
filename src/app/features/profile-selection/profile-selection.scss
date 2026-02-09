@@ -1,0 +1,242 @@
+/* Container & Header */
+.selection-container {
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Chef Grid */
+.chef-grid {
+  display: flex;
+  flex-direction: column; /* Mobile first: Stack them */
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  /* On larger screens, spread them out */
+  @media (min-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.chef-sprite-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.sprite-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid transparent; /* Shows color via binding */
+  overflow: hidden; /* Clips the image to the circle */
+  position: relative;
+  background-color: #eee; /* Fallback color */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  .chef-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills circle without stretching */
+  }
+
+  /* Fallback Initials styling */
+  .initials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: white;
+  }
+}
+
+.chef-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.chef-role {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--bg-primary); /* Use global theme var */
+  width: 100%;
+  max-width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-header {
+  height: 120px;
+  position: relative;
+  
+  /* Background Blur Effect */
+  .header-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+  
+  .header-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.3; /* Tints the background with chef's color */
+  }
+
+  .modal-avatar {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    overflow: hidden;
+    position: absolute;
+    bottom: -45px; /* Half overlapping */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+    background: white;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.modal-body {
+  padding: 3rem 1.5rem 1.5rem; /* Top padding clears avatar */
+  text-align: center;
+  
+  h3 { margin: 0; font-size: 1.8rem; }
+
+  .badge { 
+    display: inline-block; 
+    background: #eee; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-size: 0.9rem; 
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .description-list {
+    text-align: left; /* Aligns text for readability */
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    background: rgba(0,0,0,0.03); /* Subtle backing */
+    border-radius: 8px;
+    padding: 1rem;
+    padding-bottom: 0;
+
+    li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      line-height: 1.4;
+
+      /* Custom Bullet Point */
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--text-primary); /* Or use chef's color via variable if desired */
+        font-weight: bold;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem 1.5rem;
+  
+  .btn-select {
+    width: 100%;
+    padding: 1rem;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    
+    &:hover { opacity: 0.9; }
+  }
+}
+
+.nav-back-btn {
+  position: absolute; /* Takes it out of the flex flow */
+  top: 1rem;
+  left: 1rem;
+  
+  background: none;
+  border: none;
+  font-size: 2rem; /* Nice and big for touch targets */
+  line-height: 1;
+  color: var(--text-primary);
+  opacity: 0.6;
+  cursor: pointer;
+  z-index: 100; /* Stays above the content, but below the modal (z-index 2000) */
+  transition: transform 0.2s, opacity 0.2s;
+  
+  &:hover {
+    transform: translateX(-3px); /* Subtle nudge left */
+    opacity: 1;
+  }
+  
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } }
