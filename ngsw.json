@@ -1,0 +1,91 @@
+{
+  "configVersion": 1,
+  "timestamp": 1770673862849,
+  "index": "/shef/index.csr.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/shef/chunk-PZ5PX472.js",
+        "/shef/chunk-SYU6BALQ.js",
+        "/shef/chunk-VXWU7JJY.js",
+        "/shef/favicon.ico",
+        "/shef/index.csr.html",
+        "/shef/index.html",
+        "/shef/main-Q42F3P6S.js",
+        "/shef/manifest.webmanifest",
+        "/shef/styles-5QCYEUWN.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/shef/assets/chefs/balaji.png",
+        "/shef/assets/chefs/mat.jpg",
+        "/shef/assets/chefs/roberto.png",
+        "/shef/icons/icon-128x128.png",
+        "/shef/icons/icon-144x144.png",
+        "/shef/icons/icon-152x152.png",
+        "/shef/icons/icon-192x192.png",
+        "/shef/icons/icon-384x384.png",
+        "/shef/icons/icon-512x512.png",
+        "/shef/icons/icon-72x72.png",
+        "/shef/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/shef/assets/chefs/balaji.png": "756785eebc88e08ba44f851e33b4c17fcf114753",
+    "/shef/assets/chefs/mat.jpg": "ab769afcb89352629ad85c36a87fb0c2a6aa0cf6",
+    "/shef/assets/chefs/roberto.png": "e949e3ae538ead5ae69b0437b01a8888f2492345",
+    "/shef/chunk-PZ5PX472.js": "c3e5ec69827bfdcc30c77fe3badeba52ba2a5388",
+    "/shef/chunk-SYU6BALQ.js": "73122782802d3f00c32a3931b6ce37e72a3f6217",
+    "/shef/chunk-VXWU7JJY.js": "2974d2a83ae6afbb21a3aeb46878e7ee749f0992",
+    "/shef/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/shef/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/shef/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/shef/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/shef/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/shef/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/shef/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/shef/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/shef/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/shef/index.csr.html": "7cd1a9f982c1c0c1c16a91e5cc3b3642ee53b60a",
+    "/shef/index.html": "2b0ce2190d052643fa029e12efe3761f9bdf3f7f",
+    "/shef/main-Q42F3P6S.js": "c32b47251b0f3b31546c83323c2c8e64cb18f234",
+    "/shef/manifest.webmanifest": "ee084805642a0ca33327b8f29050b23ef43bdae7",
+    "/shef/styles-5QCYEUWN.css": "3495cd00ffa61013ef80fbd42e6b9ba49ad202bb"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
