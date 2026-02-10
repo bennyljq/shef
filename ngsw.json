@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1770754056164,
+  "timestamp": 1770754509252,
   "index": "/shef/index.csr.html",
   "assetGroups": [
     {
@@ -11,16 +11,16 @@
         "ignoreVary": true
       },
       "urls": [
-        "/shef/chunk-2PIO3XC3.js",
         "/shef/chunk-5PF5QUPY.js",
         "/shef/chunk-K7HO2YXL.js",
         "/shef/chunk-T6BL5K7C.js",
+        "/shef/chunk-WFZSNACY.js",
         "/shef/favicon.ico",
         "/shef/index.csr.html",
         "/shef/index.html",
-        "/shef/main-CN7CIGWL.js",
+        "/shef/main-W3DWM5ET.js",
         "/shef/manifest.webmanifest",
-        "/shef/styles-5QCYEUWN.css"
+        "/shef/styles-BEDCZMEU.css"
       ],
       "patterns": []
     },
@@ -54,10 +54,10 @@
     "/shef/assets/chefs/mat.jpg": "ab769afcb89352629ad85c36a87fb0c2a6aa0cf6",
     "/shef/assets/chefs/roberto.png": "e949e3ae538ead5ae69b0437b01a8888f2492345",
     "/shef/assets/chefs/sosig.jpg": "2a6d4175dda1b0c2f70c71338aad4ec23830a5e0",
-    "/shef/chunk-2PIO3XC3.js": "5736262daf400eab94d915bfd5d1ebeb00da87a1",
     "/shef/chunk-5PF5QUPY.js": "064f347a14c11bdfa668ecaf0d5f494e3d03d30f",
     "/shef/chunk-K7HO2YXL.js": "7130f5b99d95fac6ba91ac92ec28d55559e66d89",
     "/shef/chunk-T6BL5K7C.js": "bf98bf8b0f0be9059b38a412b66f3777aca18238",
+    "/shef/chunk-WFZSNACY.js": "037c7313806d95b53a01afdb2428395f5b4dc43a",
     "/shef/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
     "/shef/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
     "/shef/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
@@ -67,11 +67,11 @@
     "/shef/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/shef/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/shef/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/shef/index.csr.html": "c89b26f0f1eafbf721daf819421b5b6ee4f58ffd",
-    "/shef/index.html": "508634825ebd95c9ac4d7e68e887995762dd31c3",
-    "/shef/main-CN7CIGWL.js": "1c4b8e706516d205b5635f6e4f5552ae314a9afd",
+    "/shef/index.csr.html": "26013eb689156e4cd19053429500922caa4d39d4",
+    "/shef/index.html": "1d6d1d7ab7ecb304700851360373f0c3c40e6402",
+    "/shef/main-W3DWM5ET.js": "5c49823215b810aa190ee738844d8926c690ec24",
     "/shef/manifest.webmanifest": "7e8c805b7958b48172172bf866fc3854a085c212",
-    "/shef/styles-5QCYEUWN.css": "3495cd00ffa61013ef80fbd42e6b9ba49ad202bb"
+    "/shef/styles-BEDCZMEU.css": "d48cb8348a960e33818b18aeb9e3ab0674a4da0c"
   },
   "navigationUrls": [
     {
