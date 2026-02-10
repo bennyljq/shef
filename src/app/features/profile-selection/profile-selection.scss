@@ -18,7 +18,7 @@ header h2 {
 .chef-grid {
   display: flex;
   flex-direction: column; /* Mobile first: Stack them */
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
   
   /* On larger screens, spread them out */
@@ -36,6 +36,7 @@ header h2 {
   cursor: pointer;
   transition: transform 0.2s;
   user-select: none;
+  width: 180px;
 
   &:hover {
     transform: scale(1.05);

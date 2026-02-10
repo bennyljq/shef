@@ -1,3 +1,9 @@
+* {
+  -webkit-tap-highlight-color: transparent; 
+  touch-action: manipulation; 
+  user-select: none;
+}
+
 /* Global Theming System */
 :root {
   /* Dark Mode */

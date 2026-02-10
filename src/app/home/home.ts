@@ -13,4 +13,8 @@ export class Home {
   startGame() {
     this.router.navigate(['/profile-selection']);
   }
+  
+  viewIngredients() {
+    this.router.navigate(['/codex/ingredients']);
+  }
 }

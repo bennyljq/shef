@@ -1,0 +1,94 @@
+<div class="card-scene">
+  
+  <div class="card-inner" 
+  [class.is-flipped]="flipped()" 
+  [class.is-locked]="locked()">
+  
+  <div class="card-face front"
+  [class.common]="data().rarity === 'common'"
+  [class.rare]="data().rarity === 'rare'"
+  [class.legendary]="data().rarity === 'legendary'"
+  [class.locked-bg]="locked()">
+  
+  @if (locked()) {
+    <div class="locked-face">
+      <div class="lock-seal"><span class="lock-icon">🔒</span></div>
+    </div>
+  } @else {
+    <header class="card-header">
+      <div class="cost-badge">{{ data().basePrice | currency:'USD':'symbol':'1.0-0' }}</div>
+      <div class="name-ribbon">{{ data().name }}</div>
+    </header>
+    
+    <div class="art-frame">
+      <div class="placeholder-art">
+        <span class="emoji-avatar">{{ data().name === 'Egg' ? '🥚' : '📦' }}</span>
+      </div>
+    </div>
+    
+    <div class="card-body">
+      <div class="type-pill">{{ data().type }}</div>
+      
+      <div class="flavor-text-box">
+        @for (tag of data().flavorProfile; track tag) { <span class="tag">#{{ tag }}</span> }
+      </div>
+      
+      @if (data().heatLevel && data().heatLevel! > 0) {
+        <div class="heat-meter">
+          @for (i of [].constructor(data().heatLevel); track $index) {
+            <span class="chili">🌶️</span>
+          }
+        </div>
+      }
+    </div>
+    
+    <footer class="card-footer"><div class="rarity-gem"></div></footer>
+  }
+</div>
+
+<div class="card-face back">
+  <div class="nutrition-label">
+    <header>
+      <h3>Nutrition Facts</h3>
+      <div class="serving">Serving Size: {{ data().nutrition?.servingSize || 0 }}g</div>
+    </header>
+    <div class="divider thick"></div>
+    
+    <div class="calories-row">
+      <span>Calories</span>
+      <span class="value">{{ data().nutrition?.calories || 0 }}</span>
+    </div>
+    
+    <div class="divider medium"></div>
+    
+    <div class="nutrient-row">
+      <span class="label">Total Fat</span>
+      <span class="value">{{ data().nutrition?.fat || 0 }}g</span>
+    </div>
+    <div class="divider thin"></div>
+    
+    <div class="nutrient-row">
+      <span class="label">Sodium</span>
+      <span class="value">{{ data().nutrition?.sodium || 0 }}mg</span>
+    </div>
+    <div class="divider thin"></div>
+    
+    <div class="nutrient-row">
+      <span class="label">Carbohydrate</span>
+      <span class="value">{{ data().nutrition?.carbs || 0 }}g</span>
+    </div>
+    
+    <div class="nutrient-row indent">
+      <span>Total Sugars</span>
+      <span class="value">{{ data().nutrition?.sugar || 0 }}g</span>
+    </div>
+    
+    <div class="divider thin"></div>
+    
+    <div class="nutrient-row">
+      <span class="label">Protein</span>
+      <span class="value">{{ data().nutrition?.protein || 0 }}g</span>
+    </div>
+    <div class="divider thick"></div>
+  </div>
+</div>

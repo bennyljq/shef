@@ -12,7 +12,11 @@ export const routes: Routes = [
     loadComponent: () => import('./features/profile-selection/profile-selection').then(m => m.ProfileSelection),
     title: 'Select Chef'
   },
-  // We will add the 'service' (game loop) route here next
+  {
+    path: 'codex/ingredients',
+    loadComponent: () => import('./features/codex/ingredients/ingredients').then(m => m.IngredientsCodex),
+    title: 'Ingredient Codex'
+  },
   {
     path: '**',
     redirectTo: ''

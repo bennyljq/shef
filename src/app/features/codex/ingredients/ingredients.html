@@ -1,0 +1,53 @@
+<div class="codex-container">
+  <button class="nav-back-btn" (click)="goHome()">←</button>
+  
+  <header>
+    <h2>Ingredients</h2>
+    <div class="progress-bar">
+      Discovered: {{ codex.getDiscoveryProgress().found }} / {{ codex.getDiscoveryProgress().total }}
+    </div>
+  </header>
+  
+  <nav class="filter-tabs">
+    <button [class.active]="filterType() === 'all'" (click)="setFilter('all')">All</button>
+    <button [class.active]="filterType() === 'protein'" (click)="setFilter('protein')">Proteins</button>
+    <button [class.active]="filterType() === 'produce'" (click)="setFilter('produce')">Produce</button>
+    <button [class.active]="filterType() === 'spice'" (click)="setFilter('spice')">Spices</button>
+  </nav>
+  
+  <div class="card-grid">
+    @for (item of visibleIngredients(); track item.id) {
+      <div class="grid-slot" (click)="selectCard(item.id)">
+        <app-card 
+        [data]="item" 
+        [locked]="!item.isDiscovered"
+        ></app-card>
+      </div>
+    }
+  </div>
+  
+  @if (selectedIngredient(); as activeItem) {
+    <div class="overlay-backdrop" (click)="closeSelection()">
+      <div class="expanded-stage" (click)="$event.stopPropagation()">
+        
+        @if (activeItem.isDiscovered) {
+          <p class="hint-text">Tap card to flip</p>
+        } @else {
+          <p class="hint-text locked">Undiscovered Ingredient</p>
+        }
+        
+        <div class="hero-card" 
+        (click)="toggleFlip()"
+        [style.cursor]="activeItem.isDiscovered ? 'pointer' : 'default'">
+        
+        <app-card 
+        [data]="activeItem" 
+        [locked]="!activeItem.isDiscovered"
+        [flipped]="isFlipped()"  
+        ></app-card>
+      </div>
+      
+    </div>
+  </div>
+}
+</div>

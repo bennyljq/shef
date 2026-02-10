@@ -14,13 +14,28 @@ export class ProfileSelection {
   
   chefs: ChefProfile[] = [
     {
-      id: 'mathew',
-      name: 'Mathew Kwok',
-      archetype: 'Asian Home Cook',
+      id: 'sosig',
+      name: 'Sosig Ramsay',
+      archetype: 'British Home Cook',
       description: [
-        'Master of comfort food.',
+        'Loves a good British fry-up.',
+        'Starting Ingredients: Bangers, Back Bacon, Eggs, Baked Beans, Potatoes, Tomatoes, Mushrooms.',
+        'Starting Equipment: Frying Pan, Pot, Knife.',
+        '+5 Mastery to Frying Pan.' 
+      ],
+      color: 'MidnightBlue',
+      initials: 'JH',
+      imageUrl: 'assets/chefs/sosig.jpg'
+    },
+    {
+      id: 'matthew',
+      name: 'Matthew Wok',
+      archetype: 'Hong Kong Hawker',
+      description: [
+        'Master of Hong Kong stir-fry.',
         'Starts with: Rice Cooker & Soy Sauce.',
-        'Passive: +10% score on "Steamed" dishes.' 
+        'Passive: +10% score on "Steamed" dishes.',
+        '+5 Mastery to Wok.' 
       ],
       color: '#e74c3c',
       initials: 'MK',
@@ -29,7 +44,7 @@ export class ProfileSelection {
     {
       id: 'roberto',
       name: 'Roberto Carlost',
-      archetype: 'Food Truck Owner',
+      archetype: 'Mexican Food Truck Owner',
       description: [
         'King of the carne asada.',
         'Starts with: Flat Top Grill & Corn Tortillas.',
@@ -42,7 +57,7 @@ export class ProfileSelection {
     {
       id: 'balaji',
       name: 'Balaji Krishnan',
-      archetype: 'Street Food Vendor',
+      archetype: 'Indian Street Food Vendor',
       description: [
         'Spice alchemist.',
         'Starts with: Clay Tandoor & Spice Box.',

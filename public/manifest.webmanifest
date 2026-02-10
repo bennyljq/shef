@@ -9,13 +9,13 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "assets/chefs/mat.jpg",
+      "src": "assets/chefs/sosig.jpg",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/chefs/mat.jpg",
+      "src": "assets/chefs/sosig.jpg",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"

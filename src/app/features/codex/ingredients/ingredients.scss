@@ -1,0 +1,125 @@
+.codex-container {
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  h2 { margin-bottom: 0.5rem; font-size: 2.5rem; }
+  .progress-bar { font-family: 'Inter', monospace; opacity: 0.6; }
+}
+
+.nav-back-btn {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: none; border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-primary);
+  opacity: 0.6;
+  cursor: pointer;
+  z-index: 100;
+  transition: transform 0.2s, opacity 0.2s;
+  
+  &:hover { transform: translateX(-3px); opacity: 1; }
+  &:active { transform: scale(0.9); }
+}
+
+.filter-tabs {
+  display: flex; justify-content: center; gap: 0.5rem;
+  margin-bottom: 2rem; flex-wrap: wrap;
+
+  button {
+    background: none;
+    border: 1px solid var(--btn-border);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    transition: all 0.2s;
+
+    &:hover { background: rgba(0,0,0,0.05); }
+    &.active {
+      background: var(--text-primary);
+      color: var(--bg-primary);
+      border-color: var(--text-primary);
+    }
+  }
+}
+
+.card-grid {
+  display: grid;
+  /* Grid uses standard pixels for layout logic */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.grid-slot {
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 1em;
+  &:hover { transform: translateY(-5px); }
+  &:active { transform: scale(0.95); }
+}
+
+/* --- OVERLAY STYLES --- */
+
+.overlay-backdrop {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 5000;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.expanded-stage {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1rem;
+  /* Pop Animation */
+  animation: zoomIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* HERO CARD SCALING */
+.hero-card {
+  /* INSTEAD OF TRANSFORM: SCALE() */
+  /* We set the font-size. The card is 10em wide. */
+  
+  /* Desktop: 32px font = 320px wide card */
+  font-size: 36px; 
+  
+  /* Mobile: 22px font = 220px wide card */
+  @media (max-width: 600px) {
+    font-size: 28px; 
+  }
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+.hint-text {
+  margin-top: -12rem;
+  margin-bottom: -1rem;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
